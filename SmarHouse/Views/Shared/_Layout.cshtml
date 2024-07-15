@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CASA INTELIGENTE</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ArduinoWeb.styles.css" asp-append-version="true" />
+
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="check" viewBox="0 0 16 16">
+            <title>Check</title>
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+        </symbol>
+    </svg>
+
+    <div class="container py-3">
+        <header>
+            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                    <img src="~/images/house.png" width="80" height="80">
+
+                    <span class="fs-4 px-4">SMARTHOUSE</span>
+                </a>
+
+                <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                    <a class="me-3 py-2 text-dark text-decoration-none" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    <a class="me-3 py-2 text-dark text-decoration-none" asp-area="" asp-controller="Home" asp-action="Todas">Listagem</a>
+        
+                </nav>
+            </div>
+
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                <h1 class="display-4 fw-normal">Painel de Controlo</h1>
+                <p class="fs-5 text-muted"></p>
+            </div>
+        </header>
+   
+        <main role="main" >
+
+            @RenderBody()
+        </main>
+ 
+
+        <footer class="pt-4 my-md-5 pt-md-5 border-top">
+            <div class="row">
+                <div class="col-12 col-md">
+                    <img class="mb-2" src="~/images/house.png" alt="" width="30" height="30">
+                    <small class="d-block mb-3 text-muted">Trabalho realizado por Carolina Loureiro / 3º ANO TGPSI 2023-2024</small>
+                </div>
+                
+            </div>
+        </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    </div>
+
+
+</body>
+</html>

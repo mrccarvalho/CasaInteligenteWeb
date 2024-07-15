@@ -1,0 +1,40 @@
+﻿@model List<SmartHouse.Models.Medicao>
+@{
+    ViewData["Title"] = "Home";
+}
+
+
+<h2 class="display-6 text-center mb-4">LISTA DE TODAS AS LEITURAS</h2>
+
+<div class="table-responsive">
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th style="width: 22%;">Data</th>
+                <th style="width: 22%;">Porta</th>
+                <th style="width: 22%;">Movimento</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+          @foreach (Medicao medicao in Model)
+          {
+          <tr>
+                    <td> @medicao.DataMedicao</td>
+
+                    <td class=@(medicao.Porta == 1 ? "bg-danger" : "")> <svg class="bi" width="24" height="24"><use xlink:href="#check" /></svg>@medicao.Porta</td>
+                    <td class=@(medicao.Movimento == 1 ? "bg-danger" : "")><svg class="bi" width="24" height="24"><use xlink:href="#check" /></svg>@medicao.Movimento</td>
+           </tr>
+          }
+            
+        </tbody>
+
+       
+    </table>
+</div>
+
+
+
+@section Scripts {
+
+}
